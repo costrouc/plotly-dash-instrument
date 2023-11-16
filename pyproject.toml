@@ -1,0 +1,25 @@
+
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dash_otel"
+description = "Dash OpenTelemetry"
+version = "0.0.1"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "dash",
+    "sqlalchemy",
+    "pandas",
+    "opentelemetry-distro",
+    "opentelemetry-instrumentation-sqlalchemy",
+    "opentelemetry-instrumentation-requests",
+    "opentelemetry-exporter-otlp",
+]
+
+

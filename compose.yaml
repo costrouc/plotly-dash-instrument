@@ -1,0 +1,27 @@
+version: "3"
+services:
+  dash:
+    build: .
+    command:
+      - opentelemetry-instrument
+      - python
+      - "-m"
+      - "dash_otel"
+    ports: 
+     - 8000:8000
+    environment:
+      - OTEL_SERVICE_NAME=dash-otel
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://jaeger:4317
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "4317:4317"
+      - "6831:6831/udp"
+      - "16686:16686"   
+
+
+
+
+
