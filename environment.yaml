@@ -6,7 +6,10 @@ dependencies:
  - pandas
  - sqlalchemy
  - opentelemetry-distro
+ - opentelemetry-instrumentation-logging
  - opentelemetry-instrumentation-sqlalchemy
  - opentelemetry-instrumentation-requests
  - opentelemetry-instrumentation-flask
+ - flask <3.0
+ - werkzeug <3.0
  - opentelemetry-exporter-otlp

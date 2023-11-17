@@ -17,9 +17,10 @@ dependencies = [
     "sqlalchemy",
     "pandas",
     "opentelemetry-distro",
+    "opentelemetry-instrumentation-logging",
     "opentelemetry-instrumentation-sqlalchemy",
     "opentelemetry-instrumentation-requests",
-    "opentelemetry-instrumentation-flask",
+    "opentelemetry-instrumentation-flask[instruments]",
     "opentelemetry-exporter-otlp",
 ]
 
