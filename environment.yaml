@@ -8,4 +8,5 @@ dependencies:
  - opentelemetry-distro
  - opentelemetry-instrumentation-sqlalchemy
  - opentelemetry-instrumentation-requests
+ - opentelemetry-instrumentation-flask
  - opentelemetry-exporter-otlp

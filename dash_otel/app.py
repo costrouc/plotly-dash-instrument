@@ -4,24 +4,6 @@ import pandas as pd
 import requests
 
 from opentelemetry import trace
-from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
-from opentelemetry.sdk.resources import SERVICE_NAME, Resource
-from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.sdk.trace.export import BatchSpanProcessor
-from opentelemetry.instrumentation.requests import RequestsInstrumentor
-
-RequestsInstrumentor().instrument()
-
-
-RESOURCE = Resource.create({SERVICE_NAME: "dash-otlp"})
-trace_provider = TracerProvider(resource=RESOURCE)
-trace.set_tracer_provider(trace_provider)
-
-# environment variable configuration
-# https://opentelemetry-python.readthedocs.io/en/latest/exporter/otlp/otlp.html
-span_processor = BatchSpanProcessor(OTLPSpanExporter())
-trace_provider.add_span_processor(span_processor)
-
 
 tracer = trace.get_tracer('dash')
 
